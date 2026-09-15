@@ -1,0 +1,10 @@
+node_modules/
+dist/
+documentation/
+.claude/
+# legacy pre-restructure monolith, superseded by src/ — kept locally as a
+# safety net but still has the real contact directory + Sheets URL in
+# cleartext (identical to documentation/backup-pre-restructure-*/app.js),
+# so it can't go to a public repo either. Safe to delete once src/ is
+# fully verified.
+app.js

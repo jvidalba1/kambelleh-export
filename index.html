@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no">
+<title>KAMBELLEH — Panel de Misión</title>
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Kambelleh">
+<meta name="theme-color" content="#0A120C">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="gate-overlay" class="gate-overlay"></div>
+<div class="wrap" id="app">
+  <div class="header">
+    <h1 class="title"><span class="dot"></span>Kambelleh — Misión</h1>
+    <div class="sub" id="today-date"></div>
+    <div class="header-note">Playa La Barra, Bahía Málaga · basado en el manual operativo del equipo.</div>
+  </div>
+
+  <div class="settings-row">
+    <input id="whoami-input" placeholder="Tu nombre..." style="width:120px; background:#0D1811; border:1px solid var(--line); color:var(--text); padding:6px 9px; border-radius:8px; font-family:'Plus Jakarta Sans'; font-size:11.5px;" onchange="setWhoAmI(this.value)">
+    <button class="settings-btn" id="save-now-btn" onclick="saveNow()">💾 Guardar</button>
+    <button class="settings-btn" id="export-btn" onclick="exportBackup()">⬇ Exportar respaldo</button>
+    <button class="settings-btn" id="import-btn" onclick="triggerImport()">⬆ Importar respaldo</button>
+    <button class="settings-btn" onclick="toggleLang()" id="lang-btn">🌐 EN</button>
+    <button class="settings-btn" id="nube-btn" onclick="toggleSheetsPanel()">🔗 Nube</button>
+    <input type="file" id="import-file-input" accept="application/json" style="display:none;" onchange="importBackup(this)">
+    <span id="storage-status" class="sub" style="align-self:center; margin-left:4px;"></span>
+  </div>
+
+  <div id="sheets-panel"></div>
+
+  <div id="search-wrap" style="margin-bottom:14px; position:relative;">
+    <input id="global-search" placeholder="🔎 Buscar en tareas, inventario, bitácora..." oninput="renderSearch()" style="width:100%; background:#0D1811; border:1px solid var(--line); color:var(--text); padding:10px 12px; border-radius:10px; font-family:'Plus Jakarta Sans'; font-size:13px;">
+    <div id="search-results"></div>
+  </div>
+
+  <div class="main-tabs" id="main-tabs"></div>
+
+  <div class="main-view active" id="view-resumen"></div>
+  <div class="main-view" id="view-manual"></div>
+  <div class="main-view" id="view-tareas"></div>
+  <div class="main-view" id="view-limpieza"></div>
+  <div class="main-view" id="view-mantenimiento"></div>
+  <div class="main-view" id="view-inventario"></div>
+  <div class="main-view" id="view-proveedores"></div>
+  <div class="main-view" id="view-bitacora"></div>
+  <div class="main-view" id="view-equipo"></div>
+</div>
+
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>
