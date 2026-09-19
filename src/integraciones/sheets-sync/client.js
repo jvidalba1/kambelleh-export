@@ -1,5 +1,5 @@
 import { state } from "../../state.js";
-import { KAMBELLEH_SHEETS_URL } from "../../../documentation/sheets-config.js";
+import { KAMBELLEH_SHEETS_URL } from "../../config/sheets-config.js";
 
 export { KAMBELLEH_SHEETS_URL };
 

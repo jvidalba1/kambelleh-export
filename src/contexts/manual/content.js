@@ -1,4 +1,4 @@
-import { CONTACTOS } from "../../../documentation/contactos.js";
+import { CONTACTOS } from "../../config/contactos.js";
 
 export const MANUAL = [
   {
